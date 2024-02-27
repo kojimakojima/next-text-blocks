@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Preview from "@/components/Preview";
 import Input from "@/components/Input";
-import SubmitButton from "@/components/SubmitButton";
+import SubmitButton from "@/components/SaveButton";
 import WorkingSpace from "@/components/WorkingSpace";
 
 export const colorClasses: { [key: string]: string } = {
@@ -35,24 +35,26 @@ export default function Home() {
   const [widgets, setWidgets] = useState<BlockType[]>([]);
 
   return (
-    <div className="flex items-center flex-col">
-      <Input input={input} setInput={setInput} />
+    <div className="flex items-center flex-col mb-10">
+      <div className="w-full">
+        <Input input={input} setInput={setInput} />
 
-      <Preview
-        input={input}
-        color={color}
-        setColor={setColor}
-        blocks={blocks}
-      />
+        <Preview
+          input={input}
+          color={color}
+          setColor={setColor}
+          blocks={blocks}
+        />
 
-      <SubmitButton
-        input={input}
-        color={color}
-        blocks={blocks}
-        setBlocks={setBlocks}
-        setInput={setInput}
-        setColor={setColor}
-      />
+        <SubmitButton
+          input={input}
+          color={color}
+          blocks={blocks}
+          setBlocks={setBlocks}
+          setInput={setInput}
+          setColor={setColor}
+        />
+      </div>
 
       <WorkingSpace blocks={blocks} widgets={widgets} setWidgets={setWidgets} />
     </div>

@@ -1,7 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import { Button } from "./ui/button";
 
-interface SubmitButton {
+interface SaveButton {
   input: string;
   color: string;
   blocks: BlockType[];
@@ -10,15 +10,15 @@ interface SubmitButton {
   setColor: Dispatch<SetStateAction<string>>;
 }
 
-export default function SubmitButton({
+export default function SaveButton({
   input,
   color,
   blocks,
   setBlocks,
   setInput,
   setColor,
-}: SubmitButton) {
-  function handleSubmit() {
+}: SaveButton) {
+  function handleSave() {
     if (input && color) {
       setBlocks([...blocks, { input: input, color: color }]);
       setInput("");
@@ -26,12 +26,12 @@ export default function SubmitButton({
     }
   }
   return (
-    <>
+    <div className="flex justify-center">
       {input && color && (
-        <Button onClick={handleSubmit} className="font-bold">
-          SUBMIT
+        <Button onClick={handleSave} className="font-bold w-48">
+          Save
         </Button>
       )}
-    </>
+    </div>
   );
 }
