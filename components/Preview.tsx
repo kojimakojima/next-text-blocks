@@ -32,9 +32,9 @@ export default function Preview({
             <LampDeskIcon className="mr-1" /> <span>Preview</span>
           </h2>
 
-          <div className="overflow-y-auto mb-2">
+          <div className="overflow-y-auto mb-2 border-2">
             <Markdown
-              className={`mx-auto ${colorClasses[color]} h-[212px] prose w-full break-words dark:prose-invert prose-blue p-2 border-2`}
+              className={`mx-auto ${colorClasses[color]} h-[212px] prose w-full break-words dark:prose-invert prose-blue p-2`}
             >
               {input}
             </Markdown>
