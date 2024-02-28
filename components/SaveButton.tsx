@@ -28,7 +28,10 @@ export default function SaveButton({
   return (
     <div className="flex justify-center mb-8">
       {input && color && (
-        <Button onClick={handleSave} className="font-bold w-48 text-base">
+        <Button
+          onClick={handleSave}
+          className="font-bold w-20 md:w-32 text-base"
+        >
           Save
         </Button>
       )}

@@ -49,7 +49,7 @@ export default function Structure({
             <Markdown
               className={`mx-auto ${
                 colorClasses[widget.color]
-              }  prose break-words w-full dark:prose-invert prose-blue p-2 border`}
+              } rounded-sm prose break-words w-full dark:prose-invert prose-blue p-2 border`}
             >
               {widget.input}
             </Markdown>
