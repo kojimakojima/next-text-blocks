@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Preview from "@/components/Preview";
 import Input from "@/components/Input";
-import SubmitButton from "@/components/SaveButton";
+import SaveButton from "@/components/SaveButton";
 import WorkingSpace from "@/components/WorkingSpace";
 
 export const colorClasses: { [key: string]: string } = {
@@ -37,16 +37,19 @@ export default function Home() {
   return (
     <div className="flex items-center flex-col mb-10">
       <div className="w-full">
-        <Input input={input} setInput={setInput} />
+        <div className="flex justify-around gap-2 mb-6">
+          <Input input={input} setInput={setInput} />
 
-        <Preview
-          input={input}
-          color={color}
-          setColor={setColor}
-          blocks={blocks}
-        />
+          <Preview
+            input={input}
+            color={color}
+            setColor={setColor}
+            blocks={blocks}
+            widgets={widgets}
+          />
+        </div>
 
-        <SubmitButton
+        <SaveButton
           input={input}
           color={color}
           blocks={blocks}
@@ -56,7 +59,12 @@ export default function Home() {
         />
       </div>
 
-      <WorkingSpace blocks={blocks} widgets={widgets} setWidgets={setWidgets} />
+      <WorkingSpace
+        blocks={blocks}
+        widgets={widgets}
+        setWidgets={setWidgets}
+        setBlocks={setBlocks}
+      />
     </div>
   );
 }
