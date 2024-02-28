@@ -1,5 +1,5 @@
 import Markdown from "react-markdown";
-import { colorClasses } from "@/app/page";
+import { colorClasses } from "@/lib/colors";
 import {
   ArrowUpSquareIcon,
   GalleryVerticalEndIcon,

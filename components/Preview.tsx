@@ -1,6 +1,6 @@
 "use client";
 
-import { colorClasses, colorPalette } from "@/app/page";
+import { colorClasses, colorPalette } from "@/lib/colors";
 import { LampDeskIcon, PaintBucketIcon } from "lucide-react";
 import { Dispatch, SetStateAction } from "react";
 import Markdown from "react-markdown";

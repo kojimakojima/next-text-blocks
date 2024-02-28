@@ -1,4 +1,4 @@
-import { colorClasses } from "@/app/page";
+import { colorClasses } from "@/lib/colors";
 import { Button } from "./ui/button";
 import { Dispatch, SetStateAction } from "react";
 import { BlocksIcon, TrashIcon } from "lucide-react";
