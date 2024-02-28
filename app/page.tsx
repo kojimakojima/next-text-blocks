@@ -13,7 +13,7 @@ export default function Home() {
   const [widgets, setWidgets] = useState<BlockType[]>([]);
 
   return (
-    <div className="flex items-center flex-col mb-10">
+    <div className="flex items-center flex-col mb-5">
       <div className="w-full">
         <div className="flex justify-around gap-2 mb-6">
           <Input input={input} setInput={setInput} />

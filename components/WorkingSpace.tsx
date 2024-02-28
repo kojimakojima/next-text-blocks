@@ -1,6 +1,7 @@
 import { Dispatch, SetStateAction } from "react";
 import Blocks from "./Blocks";
 import Structure from "./Structure";
+import Download from "./Download";
 
 interface WorkingSpace {
   blocks: BlockType[];
@@ -28,7 +29,6 @@ export default function WorkingSpace({
     // Parse the JSON string back to an object
     const blockData = e.dataTransfer.getData("application/json");
     const block = JSON.parse(blockData);
-    console.log("block", block);
     setWidgets([...widgets, block]);
   }
 
@@ -52,6 +52,7 @@ export default function WorkingSpace({
           handleDragOver={handleDragOver}
         />
       )}
+      {widgets.length >= 1 && <Download widgets={widgets} />}
     </div>
   );
 }
