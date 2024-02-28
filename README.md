@@ -1,7 +1,5 @@
 # Text Blocks
 
-# STILL ON DEVELOPMENT🛠
+## Overview
 
-## Introduction
-
-You can drag and drop your Markdown-formatted text block into the authoring field.
+You can drag and drop your text block into the authoring field to set up the order and export them into a single .md or .txt file.

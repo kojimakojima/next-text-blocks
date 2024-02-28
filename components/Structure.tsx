@@ -2,6 +2,8 @@ import Markdown from "react-markdown";
 import { colorClasses } from "@/lib/colors";
 import {
   ArrowUpSquareIcon,
+  ChevronDown,
+  ChevronUp,
   GalleryVerticalEndIcon,
   TrashIcon,
 } from "lucide-react";
@@ -25,6 +27,25 @@ export default function Structure({
     const newWidgets = widgets.filter((widget, index) => index !== i);
     setWidgets(newWidgets);
   }
+
+  function handleMoveUp(i: number) {
+    if (i > 0 && i < widgets.length) {
+      const newWidgets = [...widgets];
+      const temp = newWidgets[i];
+      newWidgets[i] = newWidgets[i - 1];
+      newWidgets[i - 1] = temp;
+      setWidgets(newWidgets);
+    }
+  }
+  function handleMoveDown(i: number) {
+    if (i >= 0 && i < widgets.length - 1) {
+      const newWidgets = [...widgets];
+      const temp = newWidgets[i];
+      newWidgets[i] = newWidgets[i + 1];
+      newWidgets[i + 1] = temp;
+      setWidgets(newWidgets);
+    }
+  }
   return (
     <div>
       <h2 className="justify-center mb-4 text-lg font-bold flex">
@@ -45,9 +66,27 @@ export default function Structure({
           </p>
         )}
         {widgets.map((widget, i) => (
-          <div key={i} className="flex">
+          <div key={i} className="flex justify-center">
+            <div className="flex flex-col">
+              <Button
+                onClick={() => handleMoveUp(i)}
+                className={`${
+                  colorClasses[widget.color]
+                } border-2 hover:bg-secondary p-0 m-0 w-8 h-8`}
+              >
+                <ChevronUp className="w-4 h-4" />
+              </Button>
+              <Button
+                onClick={() => handleMoveDown(i)}
+                className={`${
+                  colorClasses[widget.color]
+                } border-2 hover:bg-secondary p-0 m-0 w-8 h-8`}
+              >
+                <ChevronDown className="w-4 h-4" />
+              </Button>
+            </div>
             <Markdown
-              className={`mx-auto ${
+              className={` ${
                 colorClasses[widget.color]
               } rounded-sm prose break-words w-full dark:prose-invert prose-blue p-2 border`}
             >
